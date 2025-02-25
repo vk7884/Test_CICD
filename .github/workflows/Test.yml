@@ -16,3 +16,4 @@ jobs:
         run: |
           echo "The result from get-commit-id is: Output [${{steps.get-commit-id.outputs.result}}]"
           echo "The result from get-commit-id is: $result"
+          echo ${{ GIT_SECRET }}
