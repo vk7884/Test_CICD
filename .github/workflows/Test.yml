@@ -5,6 +5,10 @@ jobs:
   example_job:
     runs-on: windows-latest
     steps:
+      - name: Get tag or commit id
+        id: get-commit-id
+        shell: powershell
+        run: result=("${{ github.sha }}").Substring(0,7) >> $GITHUB_ENV
       - name: Step 1 - Generate a value
         id: step1
         run: |
@@ -13,4 +17,4 @@ jobs:
 
       - name: Step 2 - Use the value
         run: |
-          echo "The result from Step 1 is: ${{ steps.step1.outputs.result }}"
+          echo "The result from get-commit-id is: ${{ steps.get-commit-id.outputs.result }}"
