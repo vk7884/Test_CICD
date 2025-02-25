@@ -9,7 +9,7 @@ jobs:
         id: get-commit-id
         shell: powershell
         run: |
-          result = = (("${{ github.sha }}").Substring(0,7))
+          result = (("${{ github.sha }}").Substring(0,7))
           echo "Output [$result]"
           echo "result=$result" >> $GITHUB_OUTPUT 
 
