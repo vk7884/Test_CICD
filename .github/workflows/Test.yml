@@ -8,7 +8,8 @@ jobs:
       - name: Get tag or commit id
         id: get-commit-id
         shell: powershell
-        run: echo "result=(("${{ github.sha }}").Substring(0,7))" >> $GITHUB_ENV
+        run: |
+          $result=(("${{ github.sha }}").Substring(0,7))" >> $GITHUB_ENV
       - name: Step 1 - Generate a value
         id: step1
         run: |
