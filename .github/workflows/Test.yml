@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: Get tag or commit id
         id: get-commit-id
-        shell: powershell
         run: |
           $result = (("${{ github.sha }}").Substring(0,7))
           echo "Output [$result]"
