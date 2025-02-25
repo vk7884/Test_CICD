@@ -3,7 +3,7 @@ on:
 
 jobs:
   example_job:
-    runs-on: self_runner1
+    runs-on: windows-latest
     steps:
       - name: Step 1 - Generate a value
         id: step1
