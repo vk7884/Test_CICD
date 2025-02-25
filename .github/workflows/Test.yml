@@ -18,5 +18,5 @@ jobs:
         run: |
           echo "The result from get-commit-id is: Output [${{steps.get-commit-id.outputs.result}}]"
           echo "The result from get-commit-id is: $result"
-          echo ${{ secrets.GIT_SECRET }}
+          echo ${{ Secrets.GIT_SECRET }}
           echo "$env:SUPER_SECRET"
