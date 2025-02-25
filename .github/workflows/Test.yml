@@ -3,7 +3,7 @@ on:
 
 jobs:
   example_job:
-    runs-on: ubuntu-latest
+    runs-on: self_runner1
     steps:
       - name: Step 1 - Generate a value
         id: step1
