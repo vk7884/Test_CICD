@@ -1,0 +1,16 @@
+on: 
+  workflow_dispatch:
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Generate a value
+        id: step1
+        run: |
+          echo "result=Hello, World!" >> $GITHUB_ENV
+          echo "::set-output name=result::Hello, World!"
+
+      - name: Step 2 - Use the value
+        run: |
+          echo "The result from Step 1 is: ${{ steps.step1.outputs.result }}"
